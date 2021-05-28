@@ -18,13 +18,21 @@ const themes = ColorTheme.load(myThemeJson, async url => {
   return res.text();
 });
 
-const webviewProps = getWebviewProperties(themes[0]);
+// Get the webview colors. Information about the font to use is not included
+// in themes and should be passed here as well:
+const webviewProps = getWebviewProperties(themes[0], myFontData);
 
 // This returns the 'style' property, as well as a class and data which should
 // be applied to the body:
 document.body.style = webviewProps.style;
 document.body.classList.add(webviewProps.style);
 Object.assign(document.body.dataset, webviewProps.dataset);
+```
+
+You can also get individual colors from themes in a strongly-typed wau, for example:
+
+```ts
+element.style.color = themes[0].getColor('editor.foreground').toString();
 ```
 
 ## Contributing
