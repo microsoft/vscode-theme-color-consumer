@@ -1,0 +1,49 @@
+{
+  "name": "@vscode/theme-color-consumer",
+  "version": "0.1.0",
+  "description": "Normalizes vscode themes and colors",
+  "main": "dist/index.js",
+  "scripts": {
+    "extract": "node dist/build/extract",
+    "watch": "tsc --watch",
+    "compile": "rimraf dist && tsc && esbuild --bundle --minify ./dist/index --outfile=bundle.min.js --format=esm",
+    "docker-extract": "docker build . -f build.Dockerfile",
+    "prepack": "npm run compile",
+    "test": "jest dist",
+    "test:watch": "jest dist --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/vscode-theme-color-consumer.git"
+  },
+  "author": "Connor Peet <connor@peet.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microsoft/vscode-theme-color-consumer/issues"
+  },
+  "homepage": "https://github.com/microsoft/vscode-theme-color-consumer#readme",
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/prettier": "^2.2.3",
+    "esbuild": "^0.12.5",
+    "execa": "^5.0.0",
+    "glob": "^7.1.7",
+    "got": "^11.8.2",
+    "jest": "^27.0.1",
+    "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.0.0"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "printWidth": 100,
+    "tabWidth": 2
+  }
+}

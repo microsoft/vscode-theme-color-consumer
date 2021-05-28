@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "files.exclude": {
+    "**/.theme-cache": true
+  },
+  "search.exclude": {
+    "**/dist": true,
+    "bundle.min.js": true
+  }
+}

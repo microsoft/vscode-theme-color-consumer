@@ -1,0 +1,5 @@
+/*
+!/dist
+/dist/**/*.map
+/dist/build
+!/bundle.min.js
